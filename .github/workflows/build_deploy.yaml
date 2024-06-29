@@ -34,7 +34,7 @@ jobs:
         gcloud --quiet auth configure-docker
 
     # Get the GKE credentials so we can deploy to the cluster
-    - uses: google-github-actions/get-gke-credentials@db150f2cc60d1716e61922b832eae71d2a45938f
+    - uses: 'google-github-actions/auth@v2'
       with:
         cluster_name: ${{ env.GKE_CLUSTER }}
         location: ${{ env.GKE_ZONE }}
@@ -59,8 +59,14 @@ jobs:
       run: |-
         curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
         chmod u+x ./kustomize 
-        kubectl create secret generic openai-secret --from-literal=OPENAI_API_KEY=${{secrets.OPENAI_API_KEY}} || true 
-        kubectl create secret generic qdrant-secret --from-literal=QDRANT_API_KEY=${{secrets.QDRANT_API_KEY}} --from-literal=QDRANT_URL=${{secrets.QDRANT_URL}} --from-literal=COLLECTION_NAME=${{secrets.COLLECTION_NAME}} || true 
+
+    # Create or update secrets in the GKE cluster
+    - name: Create or Update Secrets
+      run: |-
+        kubectl delete secret openai-secret || true
+        kubectl delete secret qdrant-secret || true
+        kubectl create secret generic openai-secret --from-literal=OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+        kubectl create secret generic qdrant-secret --from-literal=QDRANT_API_KEY=${{ secrets.QDRANT_API_KEY }} --from-literal=QDRANT_URL=${{ secrets.QDRANT_URL }} --from-literal=COLLECTION_NAME=${{ secrets.COLLECTION_NAME }}
 
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
