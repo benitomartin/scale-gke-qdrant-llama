@@ -43,7 +43,7 @@ jobs:
     # Build the Docker image
     - name: Build
       run: |-
-        docker build --no-cache \
+        docker build \
           --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
@@ -68,9 +68,8 @@ jobs:
         kubectl create secret generic openai-secret --from-literal=OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
         kubectl create secret generic qdrant-secret \
           --from-literal=QDRANT_API_KEY=${{ secrets.QDRANT_API_KEY }} \
-          --from-literal=QDRANT_URL=${{ secrets.QDRANT_URL }} \
-          --from-literal=COLLECTION_NAME=${{ secrets.COLLECTION_NAME }}
-          
+          --from-literal=COLLECTION_NAME=${{ secrets.COLLECTION_NAME }} \
+          --from-literal=QDRANT_URL=${{ secrets.QDRANT_URL }}      
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
