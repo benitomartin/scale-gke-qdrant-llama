@@ -167,15 +167,15 @@ The Python version used for this project is Python 3.10. You can follow along th
 12. Check some pods and logs
 
     ```bash
-    kubectl logs llama-app-gke-deploy-79bf48d7d8-4b77z
-    kubectl describe pod llama-app-gke-deploy-79bf48d7d8-4b77z
+    kubectl logs llama-gke-deploy-8476f496bc-gxhms
+    kubectl describe pod llama-gke-deploy-8476f496bc-gxhms 
     ```
 
 13. Clean up to avoid costs deleting the cluster and the docker image
 
     ```bash
     gcloud container clusters delete app-llama-gke-cluster --zone=europe-west6-a
-    kubectl delete deployment llama-app-gke-deploy
+    kubectl delete deployment llama-gke-deploy
     ```
 
 ## Streamlit UI
