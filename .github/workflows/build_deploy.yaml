@@ -66,8 +66,11 @@ jobs:
         kubectl delete secret openai-secret || true
         kubectl delete secret qdrant-secret || true
         kubectl create secret generic openai-secret --from-literal=OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
-        kubectl create secret generic qdrant-secret --from-literal=QDRANT_API_KEY=${{ secrets.QDRANT_API_KEY }} --from-literal=QDRANT_URL=${{ secrets.QDRANT_URL }} --from-literal=COLLECTION_NAME=${{ secrets.COLLECTION_NAME }}
-
+        kubectl create secret generic qdrant-secret \
+          --from-literal=QDRANT_API_KEY=${{ secrets.QDRANT_API_KEY }} \
+          --from-literal=QDRANT_URL=${{ secrets.QDRANT_URL }} \
+          --from-literal=COLLECTION_NAME=${{ secrets.COLLECTION_NAME }}
+          
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
