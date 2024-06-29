@@ -7,9 +7,9 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }} 
-  GKE_CLUSTER: llama-gke-cluster      # Cluster Name
+  GKE_CLUSTER: llama-gke-cluster          # Cluster Name
   GKE_ZONE: europe-west6-a                # Cluster zone 
-  DEPLOYMENT_NAME: llama-gke-deploy   # Deployment name
+  DEPLOYMENT_NAME: llama-gke-deploy       # Deployment name
   IMAGE: llama-app-gke-image              # Image Name
 
 jobs:
