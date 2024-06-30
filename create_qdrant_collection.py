@@ -26,7 +26,7 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 openai.api_key = OPENAI_API_KEY
 
 
-def get_repository_list(github_token, github_username):
+def get_code_file_list(github_token, github_username):
     """
     Fetch all repositories for a given GitHub user.
 
@@ -194,7 +194,7 @@ def chunked_nodes(data, client, collection_name):
 
 if __name__ == "__main__":
     # Fetch documents from GitHub repositories
-    all_documents = get_repository_list(ACCESS_TOKEN, GITHUB_USERNAME)
+    all_documents = get_code_file_list(ACCESS_TOKEN, GITHUB_USERNAME)
 
     if all_documents:
         # Split documents into nodes

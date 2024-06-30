@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: llama-gke-deploy
 spec:
-  replicas: 2
+  replicas: 2                     # Pods
   selector:
     matchLabels:
       app: llama-gke-pod
@@ -43,8 +43,8 @@ spec:
             memory: "2Gi"
             cpu: "1"
           limits:                 # Maximum resources allowed
-            memory: "4Gi"
-            cpu: "2"
+            memory: "12Gi"        # Maximum memory of the instance (80-90%)
+            cpu: "4"              # Maximum vCPUs of the instance
         readinessProbe:           # Check if the pod is ready to serve traffic.
           httpGet:
             scheme: HTTP

@@ -12,7 +12,7 @@ Main Steps
 
 - **Data Ingestion**: Load data from GitHub repositories.
 - **Indexing**: Use SentenceSplitter for indexing in nodes.
-- **Embedding**: Implement FastEmbedEmbedding.
+- **Embedding and Model**: OpenAI.
 - **Vector Store**: Use Qdrant for inserting metadata.
 - **Query Retrieval**: Implement RetrieverQueryEngine.
 - **FastAPI and GKE**: Handle requests via the FastAPI app deployed on GKE.
@@ -131,7 +131,7 @@ The Python version used for this project is Python 3.10. You can follow along th
         --zone=europe-west6-a \
         --num-nodes=5 \
         --enable-autoscaling \
-        --min-nodes=1 \
+        --min-nodes=2 \
         --max-nodes=10 \
         --machine-type=n1-standard-4 \
         --enable-vertical-pod-autoscaling
@@ -162,19 +162,20 @@ The Python version used for this project is Python 3.10. You can follow along th
     <img width="767" alt="lambda-gke" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/b4a7e10c-52f9-4ca2-ade3-f2136ff6bbdf">
     </p>
 
-    http://34.65.191.211:8000
+    http://34.65.157.134:8000
 
 12. Check some pods and logs
 
     ```bash
-    kubectl logs llama-gke-deploy-8476f496bc-gxhms
-    kubectl describe pod llama-gke-deploy-8476f496bc-gxhms 
+    kubectl logs llama-gke-deploy-668b58b455-fjwvq 
+    kubectl describe pod llama-gke-deploy-668b58b455-fjwvq
+    kubectl top pod llama-gke-deploy-668b58b455-8xfhf 
     ```
 
 13. Clean up to avoid costs deleting the cluster and the docker image
 
     ```bash
-    gcloud container clusters delete app-llama-gke-cluster --zone=europe-west6-a
+    gcloud container clusters delete llama-gke-cluster --zone=europe-west6-a
     kubectl delete deployment llama-gke-deploy
     ```
 
@@ -186,6 +187,6 @@ Run the streamlit app adding the endpoint url that you get after deployment:
    streamlit run streamlit_app.py
    ```
 
-    <p align="center">
-    <img width="767" alt="lambda-gke" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/b4a7e10c-52f9-4ca2-ade3-f2136ff6bbdf">
-    </p>
+   <p align="center">
+   <img width="767" alt="lambda-gke" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/b4a7e10c-52f9-4ca2-ade3-f2136ff6bbdf">
+   </p>

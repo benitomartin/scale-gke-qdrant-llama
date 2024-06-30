@@ -3,7 +3,7 @@ name: Build and Deploy to GKE
 on:
   push:
     branches:
-      - main
+      - production
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }} 
@@ -49,7 +49,7 @@ jobs:
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
 
-    # Push the Docker image to Google Container Registry
+    # Push the Docker image to Google Artifact Registry
     - name: Publish
       run: |-
         docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
