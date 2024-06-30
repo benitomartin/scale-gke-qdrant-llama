@@ -100,7 +100,7 @@ The Python version used for this project is Python 3.10. You can follow along th
 
    then go to one of these addresses
    
-   http://localhost:8000/docs
+   http://localhost:8000/docs or 
    http://127.0.0.1:8000/docs
 
 6. Create **GCP Account**, project, service account key, and activate GKE API
