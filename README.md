@@ -1,7 +1,7 @@
-# Q&A Pipeline Deployment on GKE for Scalability with LlamaIndex and Qdrant". 🚀
+# Q&A Pipeline Deployment on GKE for Scalability with LlamaIndex and Qdrant 🚀
 
 <p align="center">
-  <img width="976" alt="aws" src="https://github.com/benitomartin/mlops-aws-insurance/assets/116911431/4bfeb7ce-b151-4042-8cf6-c83299a2765a">
+<img width="767" alt="lambda-gke" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/b4a7e10c-52f9-4ca2-ade3-f2136ff6bbdf">
 </p>
 
 This repository contains a full Q&A pipeline using the LlamaIndex framework, Qdrant as a vector database, and deployment on Google Kubernetes Engine (GKE) using a FastAPI app and Dockerfile. Python files from my repositories are loaded into the vector database, and the FastAPI app processes requests. The main goal is to provide fast access to your own code, enabling reuse of functions.
@@ -110,7 +110,7 @@ The Python version used for this project is Python 3.10. You can follow along th
    OPENAI_API_KEY
    QDRANT_API_KEY
    QDRANT_URL
-    COLLECTION_NAME
+   COLLECTION_NAME
    GKE_SA_KEY
    GKE_PROJECT # PROJECT_ID
    ```
@@ -156,15 +156,14 @@ The Python version used for this project is Python 3.10. You can follow along th
     <img width="940" alt="Pods Running" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/d4dee27d-383f-4375-9a21-29996a5b5089">
     </p>
 
-    under svc the external ip is the endpoint (34.65.3.225), that can be added in the streamlit app
+12. Under svc the external ip is the endpoint (34.65.157.134), that can be added in the streamlit app
+
 
     <p align="center">
     <img width="767" alt="lambda-gke" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/b4a7e10c-52f9-4ca2-ade3-f2136ff6bbdf">
     </p>
 
-    http://34.65.157.134:8000
-
-12. Check some pods and logs
+13. Check some pods and logs
 
     ```bash
     kubectl logs llama-gke-deploy-668b58b455-fjwvq 
@@ -172,7 +171,7 @@ The Python version used for this project is Python 3.10. You can follow along th
     kubectl top pod llama-gke-deploy-668b58b455-8xfhf 
     ```
 
-13. Clean up to avoid costs deleting the cluster and the docker image
+14. Clean up to avoid costs deleting the cluster and the docker image
 
     ```bash
     gcloud container clusters delete llama-gke-cluster --zone=europe-west6-a
@@ -187,6 +186,6 @@ Run the streamlit app adding the endpoint url that you get after deployment:
    streamlit run streamlit_app.py
    ```
 
-   <p align="center">
-   <img width="767" alt="lambda-gke" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/b4a7e10c-52f9-4ca2-ade3-f2136ff6bbdf">
-   </p>
+<p align="center">
+<img width="793" alt="qdrant-gke" src="https://github.com/benitomartin/rag-aws-qdrant/assets/116911431/74faa65a-f662-40c3-adf6-9dc18a08f712">
+</p>
