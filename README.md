@@ -10,13 +10,13 @@ For detailed project descriptions, refer to this [Medium article](XXX).
 
 Main Steps
 
-- **Data Ingestion**: Load data from GitHub repositories.
-- **Indexing**: Use SentenceSplitter for indexing in nodes.
-- **Embedding and Model**: OpenAI.
-- **Vector Store**: Use Qdrant for inserting metadata.
-- **Query Retrieval**: Implement RetrieverQueryEngine.
-- **FastAPI and GKE**: Handle requests via the FastAPI app deployed on GKE.
-- **Streamlit**: UI component.
+- **Data Ingestion**: Load data from GitHub repositories
+- **Indexing**: Use SentenceSplitter for indexing in nodes
+- **Embedding and Model**: OpenAI
+- **Vector Store**: Use Qdrant for inserting metadata
+- **Query Retrieval**: Implement RetrieverQueryEngine
+- **FastAPI and GKE**: Handle requests via the FastAPI app deployed on GKE
+- **Streamlit**: UI
   
 Feel free to ⭐ and clone this repo 😉
 
