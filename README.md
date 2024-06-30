@@ -148,22 +148,38 @@ The Python version used for this project is Python 3.10. You can follow along th
 11. Verify Kubernetes is running after deployment
 
     ```bash
-    kubectl get po 
+    # Get the Pods
+    kubectl get po
+    
+    # Get the Nodes
+    kubectl get nodes
+    
+    # Get the Services
     kubectl get svc 
+    
+    # Get the logs of a pod
+    kubectl logs llama-gke-deploy-668b58b455-fjwvq 
+    
+    # Describe a pod
+    kubectl describe pod llama-gke-deploy-668b58b455-fjwvq
+    
+    # Check CPU usage
+    kubectl top pod llama-gke-deploy-668b58b455-fjwvq
     ```
-
-    <p align="center">
-    <img width="940" alt="Pods Running" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/d4dee27d-383f-4375-9a21-29996a5b5089">
-    </p>
+    
+<p align="center">
+<img width="790" alt="Nodes, Pods, svc and, usage2" src="https://github.com/benitomartin/rag-aws-qdrant/assets/116911431/6443b831-6642-4bea-b40d-b41977e38d4b">
+</p>
 
 12. Under svc the external ip is the endpoint (34.65.157.134), that can be added in the streamlit app
 
 
-    <p align="center">
-    <img width="767" alt="lambda-gke" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/b4a7e10c-52f9-4ca2-ade3-f2136ff6bbdf">
-    </p>
-
-13. Check some pods and logs
+    ```bash
+    # Set the FastAPI endpoint
+    FASTAPI_ENDPOINT = "http://34.65.157.134:8000/query/"
+    ```
+    
+14. Check some pods and logs
 
     ```bash
     kubectl logs llama-gke-deploy-668b58b455-fjwvq 
@@ -171,7 +187,7 @@ The Python version used for this project is Python 3.10. You can follow along th
     kubectl top pod llama-gke-deploy-668b58b455-8xfhf 
     ```
 
-14. Clean up to avoid costs deleting the cluster and the docker image
+15. Clean up to avoid costs deleting the cluster and the docker image
 
     ```bash
     gcloud container clusters delete llama-gke-cluster --zone=europe-west6-a
