@@ -191,7 +191,6 @@ The Python version used for this project is Python 3.10. You can follow along th
 
     ```bash
     gcloud container clusters delete llama-gke-cluster --zone=europe-west6-a
-    kubectl delete deployment llama-gke-deploy
     ```
 
 ## Streamlit UI
