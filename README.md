@@ -52,6 +52,7 @@ The project has been structured with the following files:
 - `deploy-gke.yaml:` deployment function
 - `kustomization.yaml:` kustomize deployment function
 - `requirements.txt:` project requirements
+- `streamlit_app.py`: streamlit app
 
 
 ## Project Set Up
