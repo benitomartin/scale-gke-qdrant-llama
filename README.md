@@ -81,7 +81,18 @@ The Python version used for this project is Python 3.10. You can follow along th
     make install
     ```
 
-4. You can test the app locally running:
+4. Make sure the `.env` file is complete:
+
+   ```bash
+   OPENAI_API_KEY=
+   QDRANT_API_KEY=
+   QDRANT_URL=
+   COLLECTION_NAME=
+   ACCESS_TOKEN=
+   GITHUB_USERNAME=
+   ```
+
+5. You can test the app locally running:
 
    ```bash
    uvicorn app:app --host 0.0.0.0 --port 8000
@@ -92,18 +103,7 @@ The Python version used for this project is Python 3.10. You can follow along th
    http://localhost:8000/docs
    http://127.0.0.1:8000/docs
 
-5. Create **GCP Account**, project, service account key, and activate GKE API
-
-6. Make sure the `.env` file is complete:
-
-   ```bash
-   OPENAI_API_KEY=
-   QDRANT_API_KEY=
-   QDRANT_URL=
-   COLLECTION_NAME=
-   ACCESS_TOKEN=
-   GITHUB_USERNAME=
-   ```
+6. Create **GCP Account**, project, service account key, and activate GKE API
 
 7. Add the following secrets into github:
    ```bash
