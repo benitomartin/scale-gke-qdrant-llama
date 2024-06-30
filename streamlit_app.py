@@ -1,5 +1,7 @@
-import streamlit as st
+"""Script for Streamlit UI."""
+
 import requests
+import streamlit as st
 
 # Set the FastAPI endpoint
 FASTAPI_ENDPOINT = "http://34.65.157.134:8000/query/"
