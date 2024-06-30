@@ -14,7 +14,7 @@ Main Steps
 - **Indexing**: Use SentenceSplitter for indexing in nodes
 - **Embedding and Model**: OpenAI
 - **Vector Store**: Use Qdrant for inserting metadata
-- **Query Retrieval**: Implement RetrieverQueryEngine
+- **Query Retrieval**: Implement RetrieverQueryEngine with SentenceTransformerRerank
 - **FastAPI and GKE**: Handle requests via the FastAPI app deployed on GKE
 - **Streamlit**: UI
   
