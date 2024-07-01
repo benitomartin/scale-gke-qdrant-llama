@@ -1,7 +1,7 @@
 # Q&A Pipeline Deployment on GKE for Scalability with LlamaIndex and Qdrant 🚀
 
 <p align="center">
-<img width="737" alt="cover_gke_medium" src="https://github.com/benitomartin/rag-gke-llama-qdrant/assets/116911431/1fea3c27-66b8-4751-b5e2-c045ac4d1b93">
+<img width="737" alt="cover_gke_medium" src="https://github.com/benitomartin/de-hotel-reviews/assets/116911431/334a141c-4dd1-463e-b170-635144fdfb48">
 </p>
 
 This repository contains a full Q&A pipeline using the LlamaIndex framework, Qdrant as a vector database, and deployment on Google Kubernetes Engine (GKE) using a FastAPI app and Dockerfile. Python files from my repositories are loaded into the vector database, and the FastAPI app processes requests. The main goal is to provide fast access to your own code, enabling reuse of functions.
