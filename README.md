@@ -6,7 +6,7 @@
 
 This repository contains a full Q&A pipeline using the LlamaIndex framework, Qdrant as a vector database, and deployment on Google Kubernetes Engine (GKE) using a FastAPI app and Dockerfile. Python files from my repositories are loaded into the vector database, and the FastAPI app processes requests. The main goal is to provide fast access to your own code, enabling reuse of functions.
 
-For detailed project descriptions, refer to this [Medium article](XXX).
+For detailed project descriptions, refer to this [Medium article](https://medium.com/@benitomartin/find-your-code-scaling-a-llamaindex-and-qdrant-application-with-google-kubernetes-engine-2db126f16344).
 
 Main Steps
 
