@@ -1,7 +1,7 @@
 # Q&A Pipeline Deployment on GKE for Scalability with LlamaIndex and Qdrant 🚀
 
 <p align="center">
-<img width="767" alt="lambda-gke" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/b4a7e10c-52f9-4ca2-ade3-f2136ff6bbdf">
+<img width="737" alt="cover_gke_medium" src="https://github.com/benitomartin/rag-gke-llama-qdrant/assets/116911431/1fea3c27-66b8-4751-b5e2-c045ac4d1b93">
 </p>
 
 This repository contains a full Q&A pipeline using the LlamaIndex framework, Qdrant as a vector database, and deployment on Google Kubernetes Engine (GKE) using a FastAPI app and Dockerfile. Python files from my repositories are loaded into the vector database, and the FastAPI app processes requests. The main goal is to provide fast access to your own code, enabling reuse of functions.
@@ -202,5 +202,5 @@ Run the streamlit app adding the endpoint url that you get after deployment:
    ```
 
 <p align="center">
-<img width="793" alt="qdrant-gke" src="https://github.com/benitomartin/rag-aws-qdrant/assets/116911431/74faa65a-f662-40c3-adf6-9dc18a08f712">
+<img width="767" alt="lambda-gke" src="https://github.com/benitomartin/mlops-car-prices/assets/116911431/b4a7e10c-52f9-4ca2-ade3-f2136ff6bbdf">
 </p>
