@@ -8,6 +8,8 @@ This repository contains a full Q&A pipeline using the LlamaIndex framework, Qdr
 
 For detailed project descriptions, refer to this [Medium article](https://medium.com/@benitomartin/find-your-code-scaling-a-llamaindex-and-qdrant-application-with-google-kubernetes-engine-2db126f16344).
 
+This article was featured in the GKE Newsletter ([This week in GKE, ISSUE#19, 12 July 2024](https://www.linkedin.com/pulse/dymanic-workload-schedule-ga-confidential-computing-kms-sghiouar-ci8he/?trackingId=%2Bhgvw2lMQlSdKygvtG4MYA%3D%3D)) 
+
 Main Steps
 
 - **Data Ingestion**: Load data from GitHub repositories
